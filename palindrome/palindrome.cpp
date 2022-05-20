@@ -22,7 +22,7 @@ bool Solution::isPalindrome(int x) {
     string sub1;                  // declare variables in this larger scope
     string sub2;
     string revS;
-    if (s.size() % 2 == 0) {                            // 2 caaes of palindrome: even or odd len of string
+    if (s.size() % 2 == 0) {                            // 2 cases of palindrome: even or odd len of string
       sub1 = s.substr(0, midpoint);                     // given: 1221 sub1 is "12"
       sub2 = s.substr(midpoint, s.size());              // given: 1221 sub2 is "21"
       revS = reverseStr(s, midpoint);                   // call reverseString function
