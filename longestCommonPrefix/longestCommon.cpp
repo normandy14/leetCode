@@ -51,43 +51,34 @@ vector<string> getAllSubStrings(string smallestWord) {
 }
 
 string commonPrefix(vector<string> v, vector<string> subV) {
-  string subString;
-  for (int i=0; i < subV.size(); i++) {
-    
-    subString = subV[i];
-    int compareStr;
-    bool flag = true;
-    // cout << "subString: " << subString << endl;
-    
-    for (int j=0; j < v.size(); j++) {
-      // cout << v[j] << endl;
-      compareStr = v[j].find(subString, 0);
-      // cout << "compare: " << compareStr << endl;
-      if (compareStr == -1) {
-        flag = false ;
+  // string prefix = subV[0];
+  // cout << "prefix: " << prefix;
+  bool flag = true;
+  for (string p: subV) {
+    // cout << "p: " << p << endl;
+    for (string w: v) {
+      // cout << "w: " << w << endl;
+      if (w.rfind(p, 0) == -1) {
+        flag = false;
       }
     }
     if (flag == true) {
-      // cout << "Out: " << subString << endl;
-      return subString;
+      // cout << "answer is: " << p << endl;
+      return p;
     }
-    flag == true;
+    flag = true;
   }
   return "";
 }
 
 string Solution::longestCommonPrefix(vector<string>& strs) {
-  sort(strs.begin(), strs.end(), compareFn);            // sort by length of word
+  sort(strs.begin(), strs.end(), compareFn);    // sort by length of word
   vector<string> subWords = getAllSubStrings(strs[0]);
   string s = commonPrefix(strs, subWords);
   return s;
 }
-
 int main() {
   Solution sol;                                         // create class in scope
-  
   vector<string> strs = { "flower","flow","flight" };   // sorted test strings
   cout << sol.longestCommonPrefix(strs) << endl;
-  
-
 }
