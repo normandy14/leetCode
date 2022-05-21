@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
@@ -25,24 +25,36 @@ bool compareFn(string a, string b) { // create custom sort
 }
 
 string Solution::longestCommonPrefix(vector<string>& strs) {
-    /*
-    for (string s: strs) {
-        cout << s << endl;
+    string shortestWord = strs[0];
+    int i = 0; // the index to make substrings
+    int j = shortestWord.size();
+    cout << "shortest word is " << shortestWord << endl;
+    string wordToMatch = shortestWord.substr(i, j);
+    cout << "substr is " << wordToMatch << endl;
+    bool isMatch = false;
+    for (int i=1; i < strs.size(); i++) {
+      cout << strs[i] << endl;
+      if (wordToMatch != strs[i]) {
+        cout << "not a match: break" << endl;
+      }
     }
-    */
     return "hello world";
 }
 
 int main() {
   Solution s;
-  vector<string> v = { "xyzzy", "plugh", "abracadabra", "dd", "a" };
+  vector<string> v = { "flower","flow","flight" };
+  /*
   for (string e: v) {
     cout << e << endl;
   }
+  */
   sort(v.begin(), v.end(), compareFn); // sorting, but not by length
+  /*
   for (string e: v) {
     cout << e << endl;
   }
+  */
   s.longestCommonPrefix(v);
   return 0;
 }
