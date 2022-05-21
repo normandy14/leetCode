@@ -9,6 +9,8 @@ The following problems were attempted:
 - palindrome
 - twoSum
 
+**Some problems** have a draft. Which is the code without good formatting and explanations and comments.
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
