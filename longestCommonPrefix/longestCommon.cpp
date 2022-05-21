@@ -47,9 +47,10 @@ vector<string> getAllSubStrings(string smallestWord) {
 }
 
 string commonPrefix(vector<string> v, vector<string> subV) {
+  bool flag = true;
   for (string p: subV) {
     for (string w: v) {
-      if (w.rfind(p, 0) == -1) {      // ignore when a substring is not found in this word in vector
+      if (w.rfind(p, 0) == -1) {      // ignore when a substring is not found
         flag = false;
       }
     }
@@ -61,13 +62,12 @@ string commonPrefix(vector<string> v, vector<string> subV) {
   return "";
 }
 
-string Solution::longestCommonPrefix(vector<string>& strs) {  // Sets up problem
-  sort(strs.begin(), strs.end(), compareFn);                  // sort by length of word
+string Solution::longestCommonPrefix(vector<string>& strs) {
+  sort(strs.begin(), strs.end(), compareFn);    // sort by length of word
   vector<string> subWords = getAllSubStrings(strs[0]);
   string s = commonPrefix(strs, subWords);
   return s;
 }
-  
 int main() {
   Solution sol;                                         // create class in scope
   vector<string> strs = { "flower","flow","flight" };   // sorted test strings

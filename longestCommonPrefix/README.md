@@ -1,6 +1,38 @@
-# Pass 101 of 121 Tests
-Interpreted the question slightly different from what was asked. On certain edge cases, it fais with an error of
-`terminate called after throwing an instance of 'std::length_error'
-  what():  basic_string::_M_create`
+# Longest Common Prefix
 
-Its a runtime error so its very difficult to debug
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+ 
+## Examples
+
+**Example 1:**
+
+```
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+```
+
+**Example 2:**
+
+```
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+```
+
+## Constraints:
+
+```
+1 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] consists of only lower-case English letters.
+```
+
+## Important
+**Pass 101 of 121 Tests**
+
+I Interpreted the question slightly different from what was asked. On certain edge cases, it fais with an error:
+```terminate called after throwing an instance of 'std::length_error'
+  what():  basic_string::_M_create```
